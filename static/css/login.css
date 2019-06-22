@@ -1,0 +1,33 @@
+div {
+    display: inline-block;
+    vertical-align: top;
+}
+.registra{
+    display:none;
+}
+#reg,
+#log {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+body {
+    display: block;
+    text-align: center;
+}
+
+input{
+    margin:auto;
+}
+
+input {
+    display: block;
+}
+
+.buttons {
+    text-align: center;
+}
+.tex{
+    display:block;
+    font-size:12px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/edit.css')}}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h4>Hello {{mywishes[0]['full_name']}}! Add to your cart!</h4>
+        <a href="/logout">Logout</a>
+        <div>
+            <form action="/editthis" method="post">
+                <p>{%with messages= get_flashed_messages(with_categories=true,category_filter=['flasheditsuccess']) %}
+                    {%if messages%}
+                    {%for category, message in messages%}
+                    {{message}}
+                    {%endfor%}
+                    {%endif%}
+                    {%endwith%}</p>
+                <p>{%with messages= get_flashed_messages(with_categories=true,category_filter=['flasheditwish']) %}
+                {%if messages%}
+                {%for category, message in messages%}
+                {{message}}
+                {%endfor%}
+                {%endif%}
+                {%endwith%}
+                </p>
+                <p><label for="editwish">Edit Wish:</label>
+                <input id="editwish" type='text' name="editwish">
+                </p>
+                <p>{%with messages= get_flashed_messages(with_categories=true,category_filter=['flashededitdescription']) %}
+                {%if messages%}
+                {%for category, message in messages%}
+                {{message}}
+                {%endfor%}
+                {%endif%}
+                {%endwith%}</p>
+                <p><label for="editdescription">Description:</label>
+                <input id="editdescription" type='text' name="editdescription">
+                </p>
+                <a href="/wishes">Cancel</a>
+                <input type="submit" value="Submit">
+                <a href="/wishes">Go Back</a>
+            </form>
+</body>
+
+</html>

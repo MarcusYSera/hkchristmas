@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Presents</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/login.css')}}">
+</head>
+
+<body>
+    <h1> Welcome to HK Secret Santa!</h1>
+    <div>
+        <div id="reg" class="registra">
+            <h4>Register</h4>
+            <form action="/registration" method="post">
+                {%with messages= get_flashed_messages(with_categories=true,category_filter=['flashfname']) %}
+                {%if messages%}
+                {%for category, message in messages%}
+                {{message}}
+                {%endfor%}
+                {%endif%}
+                {%endwith%}
+                <label for="firstname">First Name:</label>
+                <input id="firstname" name="fname" type="text">
+                {%with messages= get_flashed_messages(with_categories=true,category_filter=['flashlname']) %}
+                {%if messages%}
+                {%for category, message in messages%}
+                {{message}}
+                {%endfor%}
+                {%endif%}
+                {%endwith%}
+                <label for="lastname">Last Name:</label>
+                <input id="lastname" name="lname" type="text">
+                {%with messages= get_flashed_messages(with_categories=true,category_filter=['flashemail']) %}
+                {%if messages%}
+                {%for category, message in messages%}
+                {{message}}
+                {%endfor%}
+                {%endif%}
+                {%endwith%}
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="text">
+                {%with messages= get_flashed_messages(with_categories=true,category_filter=['flashpassword']) %}
+                {%if messages%}
+                {%for category, message in messages%}
+                {{message}}
+                {%endfor%}
+                {%endif%}
+                {%endwith%}
+                <label for="password">Password:</label>
+                <input id="password" name="password" type="password">
+                <label for="pconfirm">Password Confirmation:</label>
+                <input id="pconfirm" name="pconfirm" type="password">
+                <div class="buttons">
+                    <input class="clicker" type="submit" value="Register">
+                </div>
+                <div class="tex">
+                    Already registered? <a id ="showLog" href="#">Sign In</a> Here
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <div id="log">
+            <h4>Login</h4>
+            <form action="/login" method="post">
+                {%with messages= get_flashed_messages(with_categories=true,category_filter=['flashloginemail']) %}
+                {%if messages%}
+                {%for category, message in messages%}
+                {{message}}
+                {%endfor%}
+                {%endif%}
+                {%endwith%}
+                <label for="loginemail">Email:</label>
+                <input id="loginemail" name="loginemail" type="text">
+                {%with messages= get_flashed_messages(with_categories=true,category_filter=['flashloginpassword']) %}
+                {%if messages%}
+                {%for category, message in messages%}
+                {{message}}
+                {%endfor%}
+                {%endif%}
+                {%endwith%}
+                <label for="loginpassword">Password:</label>
+                <input id="loginpassword" name="loginpassword" type="password">
+                <div class="buttons">
+                    <input class="clicker" type="submit" value="Login">
+                </div>
+                <div class="tex">
+                    Need an account? <a id="showReg" href="#">Sign up</a> here
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../static/js/login.js"></script>
+</body>
+
+</html>

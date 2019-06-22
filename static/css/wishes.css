@@ -1,0 +1,23 @@
+.table-wrapper-scroll-y {
+    display: block;
+    max-height: 200px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+.btn-success:hover, .btn-info:hover, .btn-danger:hover, .btn-primary:hover{
+    color:lightgray;
+}
+
+#menuBar{
+    text-align:right;
+}
+#action form{
+    display:inline;
+}
+#action{
+    text-align: center;
+}
+#act{
+    width:17em;
+}
